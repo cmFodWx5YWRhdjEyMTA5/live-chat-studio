@@ -1,0 +1,23 @@
+<div class="modal">
+	<header class="bar bar-header bar-dark">
+        <h1 class="title">Login</h1>        
+		<button class="button button-clear" ng-click="closeLogin()"><i class="icon ion-android-arrow-back"></i></button>
+    </header>
+	
+	<ion-content has-header="false" padding="false" style="top: 50px;">
+      <div class="list card">
+        <p>Type your username and password to connect!</p>
+        <label class="item item-input item-floating-label">
+          <input type="text" placeholder="Username" ng-model="login.username" ng-click="showKeyboard();" is-focused="true">
+        </label>
+        <label class="item item-input item-floating-label">
+          <input type="password" placeholder="Password" ng-model="login.password" ng-click="showKeyboard();">
+        </label>
+        <div class="padding">
+          <button class="button button-full button-assertive button-stable" ng-click="login_press()">Login</button>
+        </div>
+      </div>
+    </ion-content>
+	
+</div>
+

@@ -1,0 +1,43 @@
+<div class="modal">
+    <header class="bar bar-header bar-dark">
+        <h1 class="title" style="font-size: 14px !important; text-align: center !important;" >{{user.username}}, {{user.age}}</h1>        		 
+		{{user.thumb}} <button class="button button-clear" ng-click="setProfileThumb(user)"><i class="icon ion-thumbsup"></i></button>
+		<button class="button button-clear" ng-click="removeUser(user)"><i class="icon ion-android-alert"></i></button>
+		<button class="button button-clear" ng-click="closeUserModal()"><i class="icon ion-android-arrow-back"></i></button>	
+		
+    </header>
+     
+
+   <ion-content scroll="false" has-header="false" style="background: #444; top: 42px; text-align: center">	
+    
+		<ion-slide-box show-pager="false">
+			<ion-slide ng-repeat="currUser in userImages">
+				<a ng-click="userMoreDetails(user, currUser)">
+					<ion-scroll zooming="true" direction="xy" min-zoom="1">
+						<img class="full-image" centerimage imageonload ng-src="{{currUser.ImageName}}" />
+					</ion-scroll>					
+				</a>			
+				<div style="position: absolute; top: 5px; right: 10px;; display: block; background: rgba(87, 90, 79, 0.56); padding: 5px; text-align: center; color: #fff; "><i class="ion-images"></i> {{userImages.length}}</div>
+			</ion-slide>
+		</ion-slide-box>
+		
+		
+		<div class="tabs tabs-icon-left">
+	
+			<a  class="tab-item" ng-click="openChat(user)"><i class="icon ion-chatbubble-working assertive"></i>Chat</a>
+			  
+			<div ng-show="isAddFavorite">
+				<a  class="tab-item" ng-click="addFavorite(user);"><i class="icon ion-star energized"></i>Favorite</a>
+			</div>
+			  
+			<div ng-show="isRemoveFavorite">
+				<a class="tab-item"  ng-click="RemoveFavorite(user);"><i class="icon ion-trash-a"></i>Favorite</a>
+			</div>
+			  
+			<a  class="tab-item"  ng-click="showUserLocation(user)"><i class="icon ion-location balanced"></i>Location</a>
+		   
+		</div>
+		
+    </ion-content>
+	
+</div>

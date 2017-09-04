@@ -1,0 +1,115 @@
+<div class="modal">
+		<ion-header-bar class="bar-dark" >      		
+			
+			<button class="button button-clear" ng-click="closeChatModal()"><i class="icon ion-android-arrow-back"></i></button>
+			
+			<h1 class="title" style="font-size: 14px !important; text-align: left !important;" ng-show="!user_typing" >{{chatUser.username}}, {{chatUser.age}}</h1>			
+			<h1 class="title" style="font-size: 14px !important;  text-align: center !important; color: yellow;" ng-show="user_typing"> typing...</h1>
+			
+			<div class="buttons">
+				<button class="button button-clear" ng-click="chat_popover.show($event)"><i class="icon ion-more"></i></button>					
+			</div>
+									
+	    </ion-header-bar>
+				
+		<ion-content  has-header="true" has-bouncing="true"  delegate-handle="chatScroll" ng-style='{ bottom: 55 + "px" }'>	
+			
+			<ion-refresher
+				pulling-text="Pull to refresh..."
+				on-refresh="doRefresh_messages()">
+			</ion-refresher>
+			
+			<div style="color: #444; text-align: center; font-size: 14px" ng-show="chatMessages.length <= 0">Start a conversation with <strong>{{chatUser.username}}.</strong></div>
+			
+			<div style="position: absolute; width: 100%; text-align: center; ">
+				<img style="max-width: 75px; max-height: 75px; width: 100%; height: 100%; border-radius: 50%" ng-show="chatMessages.length <= 0" ng-src="{{chatUser.ThumbName}}" ng-click="showUserProfile(chatUser);"/>
+			</div>
+			
+			<div ng-repeat="chatMessage in chatMessages" ng-class="{ other: chatMessage.user_id == profile.id }" class="message">
+
+				<img ng-src="{{chatMessage.ThumbName}}" ng-click="showUserProfile(chatMessage);"/>
+				<div class="message">
+					<div style="margin-left: 5px; font-size: 10px;">{{ chatMessage.date}}</div>					
+					<span>	
+						<div style="text-align: center" ng-class="{ emj: chatMessage.code == 1 }">{{chatMessage.message}}</div>
+						
+						<img ng-show="chatMessage.ChatImageName.length > 0" ng-click="showAtachFile(chatMessage.ChatImageName);" ng-src="{{chatMessage.ChatThumbsName}}" />
+						<div ng-if="chatMessage.ChatImageName == 'http://kazanlachani.com/ify/undefined'">Error while uploading photo</div>
+										
+					</span>
+					<div ng-show="chatMessage.status == 1 && chatMessage.user_id == profile.id" style="margin-left: 5px;  font-size: 10px; color: #ABABAB;">✔</div>					
+				</div>
+
+
+			</div>
+			
+			<div ng-show="seen" style="position: relative; float: right; margin-bottom: 20px; right: 60px; font-size: 10px; color: #ABABAB;">Seen</div>					
+			
+		</ion-content>
+		
+		
+		<div ng-show="isIcon" style="position: absolute; left: 0; right: 0; opacity: 0.9; padding: 10px; background: #2d2d2d; text-align: center; width: 100%; height: 100%; z-index: 20;">
+						
+			<label ng-click="hide_icons('&#x1F603;')" class="emj">&#x1F603;</label>
+			<label ng-click="hide_icons('&#x1F601;')" class="emj">&#x1F601;</label>
+			<label ng-click="hide_icons('&#x1F60D;')" class="emj">&#x1F60D;</label>
+			<label ng-click="hide_icons('&#x1F607;')" class="emj">&#x1F607;</label>
+			<label ng-click="hide_icons('&#x1F609;')" class="emj">&#x1F609;</label>
+			<label ng-click="hide_icons('&#x1F602;')" class="emj">&#x1F602;</label>
+			<label ng-click="hide_icons('&#x1F60E;')" class="emj">&#x1F60E;</label>
+			<label ng-click="hide_icons('&#x1F622;')" class="emj">&#x1F622;</label>
+			<label ng-click="hide_icons('&#x1F60F;')" class="emj">&#x1F60F;</label>
+			<label ng-click="hide_icons('&#x1F44D;')" class="emj">&#x1F44D;</label>
+			<label ng-click="hide_icons('&#x1F44E;')" class="emj">&#x1F44E;</label>
+			
+			<label ng-click="hide_icons('&#x1F499;')" class="emj">&#x1F499;</label>
+			<label ng-click="hide_icons('&#x1F382;')" class="emj">&#x1F382;</label>
+			<label ng-click="hide_icons('&#x1F31E;')" class="emj">&#x1F31E;</label>
+			
+			<label ng-click="hide_icons('&#x1F611;')" class="emj">&#x1F611;</label>
+			<label ng-click="hide_icons('&#x1F637;')" class="emj">&#x1F637;</label>
+			<label ng-click="hide_icons('&#x1F60C;')" class="emj">&#x1F60C;</label>
+			<label ng-click="hide_icons('&#x1F613;')" class="emj">&#x1F613;</label>
+			<label ng-click="hide_icons('&#x1F63B;')" class="emj">&#x1F63B;</label>
+			<label ng-click="hide_icons('&#x1F407;')" class="emj">&#x1F407;</label>
+			<label ng-click="hide_icons('&#x1F411;')" class="emj">&#x1F411;</label>
+			
+			
+			<label ng-click="hide_icons('&#x1F626;')" class="emj">&#x1F626;</label>
+			<label ng-click="hide_icons('&#x1F633;')" class="emj">&#x1F633;</label>
+			<label ng-click="hide_icons('&#x1F61B;')" class="emj">&#x1F61B;</label>
+			<label ng-click="hide_icons('&#x1F610;')" class="emj">&#x1F610;</label>
+			<label ng-click="hide_icons('&#x1F635;')" class="emj">&#x1F635;</label>
+			<label ng-click="hide_icons('&#x1F60B;')" class="emj">&#x1F60B;</label>
+			<label ng-click="hide_icons('&#x1F605;')" class="emj">&#x1F605;</label>
+			<label ng-click="hide_icons('&#x1F608;')" class="emj">&#x1F608;</label>
+			<label ng-click="hide_icons('&#x1F37A;')" class="emj">&#x1F37A;</label>
+			<label ng-click="hide_icons('&#x1F375;')" class="emj">&#x1F375;</label>
+			<label ng-click="hide_icons('&#x1F378;')" class="emj">&#x1F378;</label>
+			<label ng-click="hide_icons('&#x1F337;')" class="emj">&#x1F337;</label>
+			<label ng-click="hide_icons('&#x1F43C;')" class="emj">&#x1F43C;</label>
+			<label ng-click="hide_icons('&#x1F490;')" class="emj">&#x1F490;</label>
+			
+			<label ng-click="hide_icons('&#x1F491;')" class="emj">&#x1F491;</label>
+			<label ng-click="hide_icons('&#x1F48B;')" class="emj">&#x1F48B;</label>
+			
+			
+			
+			<button class="button button-full button-dark button-stable" ng-click="close_icons()">Back</button>
+				
+		</div>
+		
+		<ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+			<button class="button button-clear" ng-click="show_icons()"><i class="icon ion-happy energized"></i></button>
+			<button class="button button-clear" ng-click="sendPhoto();"> <i class="icon ion-android-camera positive"></i></button>
+			
+			<label class="item-input-wrapper">
+				<input type="text" style="padding: 20px;" placeholder="Type your message" on-return="write_message(data); closeKeyboard()" ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()" />
+			</label>
+			<button class="button button-clear" ng-click="write_message(data)">Send</button>
+		</ion-footer-bar>
+						
+		
+			
+</div>
+

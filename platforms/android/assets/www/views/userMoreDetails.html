@@ -1,0 +1,39 @@
+<div class="modal">
+    <header class="bar bar-header bar-dark">
+        <h1 class="title" style="font-size: 14px !important; text-align: center !important;" >{{userDetail.username}}, {{userDetail.age}}</h1>        
+		<button class="button button-clear " ng-click="addFavorite(userDetail)"><i ng-show="userDetail.id != profile.id" class="icon ion-star energized"></i></button>
+		<button class="button button-clear" ng-click="removeUser(user)"><i class="icon ion-android-alert"></i></button>
+		<button class="button button-clear" ng-click="closeMoreDetails()"><i class="icon ion-android-arrow-back"></i></button>
+		
+    </header>
+	
+    	<ion-content scroll="false" has-header="false" style="background: #444; top: 42px; text-align: center">	
+			<div style="position: absolute; z-index: 20; top: 5px; right: 10px;; display: block; background: rgba(87, 90, 79, 0.56); padding: 5px; text-align: center; color: #fff; "><i class="ion-images"></i> ({{userImages.length}})</div>
+			<ion-slide-box show-pager="false">
+				<ion-slide ng-repeat="currUser in userImages">
+					
+					<ion-scroll zooming="true" direction="xy" min-zoom="1">
+						<img class="full-image" imageonload ng-src="{{currUser.ImageName}}" />
+					</ion-scroll>		
+					
+				</ion-slide>
+			</ion-slide-box>
+          
+		</ion-content>
+	
+	<span style="position: absolute; text-align: center; z-index: 20; bottom: 0px; left: 0; right: 0; background-color:rgba(0,0,0,0.3) !important; padding: 10px; color: #fff; ">
+		<i class="icon ion-heart"></i> Hi, I am 
+		<span style="color: rgb(255, 221, 48);">
+			{{userDetail.username}}, {{userDetail.age}}
+		</span>
+		
+		<div ng-show="userDetail.action != ''" style="color: rgb(255, 221, 48);">
+			<span style="color: #fff; "><i class="icon ion-compose"></i>  Status: <br/>{{userDetail.action}} 
+		</div>
+		
+		<div ng-show="userDetail.descr != ''" style="color: rgb(255, 221, 48);">
+			<span style="color: #fff; "><i class="icon ion-document-text"></i> Info: <br/>{{userDetail.descr}} 
+		</div>
+	</span>
+	
+</div>

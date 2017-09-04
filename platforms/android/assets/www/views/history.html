@@ -1,0 +1,29 @@
+<ion-view title="My history" left-buttons="leftButtons" animation="no-animation" right-buttons="rightButtons">
+
+	<ion-nav-buttons side="right">
+		<a ng-show="history.length > 0" class="button" ng-click="remove();"><i class="icon ion-trash-b"></i></a>			
+	</ion-nav-buttons>
+	
+	
+	<ion-content has-header="true" padding="false" has-bouncing="true">
+		<div style="color: #444; text-align: center; font-size: 14px" ng-show="history.length <= 0"><i class="icon ion-information-circled"></i> No history.</strong></div>
+			
+		<ion-list>
+
+			<ion-item collection-repeat="user in history | reverse" 
+			
+				<a class="item item-avatar" ng-click="viewProfile(user)">
+				   <img ng-src="{{user.ThumbName}}">
+				  <h2>{{user.username}}</h2>
+				  <p>{{user.descr}}</p>	
+				  <span class="badge badge-balanced">{{user.age}}</span>					  
+				</a>	
+			 
+			</ion-item>
+
+		</ion-list>
+		
+	</ion-content>
+
+</ion-view>
+

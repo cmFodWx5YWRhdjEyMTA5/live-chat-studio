@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="livechat">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    
+	<title>Live Chat</title>
+	
+	<link href="css/style.css" rel="stylesheet">	 
+	<link href="css/chat_style.css" rel="stylesheet">	 
+	<link href="lib/css/ionic.min.css" rel="stylesheet">		             	
+	<!-- http://emojisymbols.com/emojilist.php --> 
+  </head>
+ 
+  <body>
+    
+    <div ng-controller="MainCtrl">       
+      <ion-nav-view animation="no-animation"></ion-nav-view>
+    </div>
+    
+  </body>
+  
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>	
+	<script type="text/javascript" src="lib/js/ionic.bundle.min.js"></script> 			
+	<script src="js/socket.io-1.2.0.js"></script>
+	<script src="cordova.js"></script>		
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&sensor=true"></script>
+	
+	<!-- javascript files -->
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/directives.js"></script>	
+	<script src="plugins/home.js"></script> 
+	<script src="plugins/Toast.js"></script>
+	<script src="plugins/device.js"></script>
+	<script src="plugins/share.js"></script>	
+	<script src="js/TextArea.js"></script> 	
+	<script src="js/confirm.js"></script> 	
+	<script src="js/StreamingMedia.js"></script> 	
+	
+	<!-- Main Service -->
+	<script src="plugins/backgroundService-3.1.0.js"></script>
+	<script src="plugins/myService-3.1.0.js"></script>
+	
+	<!-- facebook js sdk -->
+	<script src="plugins/cdv-plugin-fb-connect.js"></script>	
+	<script src="plugins/facebook_js_sdk.js"></script> 
+  
+</html>

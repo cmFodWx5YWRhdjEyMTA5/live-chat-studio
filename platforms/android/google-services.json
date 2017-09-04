@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "169304134628",
+    "project_id": "meet-app-163816"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169304134628:android:3c0a8abdc2596028",
+        "android_client_info": {
+          "package_name": "com.livechat.dating"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "169304134628-a1v6dp781scfouqbpqvb1s3i15vo86j2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABDl7TJRcQhY8y8DjA4rktZ4WMMf9eOdA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

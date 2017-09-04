@@ -1,0 +1,22 @@
+<ion-view title="Music" animation="no-animation" left-buttons="leftButtons" right-buttons="rightButtons">
+
+    <ion-content has-header="true">
+		<div class="list padding">
+			
+			<h3>Music</h3>			
+			<p>We believe that music not only touches hearts but also brings people together...</p>
+			<p>Thank you for your love!</p>
+	
+			<a class="item item-avatar"  ng-click="playSong(song)" ng-repeat="song in songs">
+				<img ng-src="http://kazanlachani.com/ify/images/play-video-icon.png">
+				
+				<p>Relaxing music - {{$index  + 1}} <i class="icon ion-headphone"></i></p>				
+			</a>
+			
+		</div>
+			
+    </ion-content>
+	
+</ion-view>
+
+

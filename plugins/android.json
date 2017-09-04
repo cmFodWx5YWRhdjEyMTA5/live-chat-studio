@@ -1,0 +1,58 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.livechat.dating"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.livechat.dating"
+        },
+        "cordova-plugin-pdialog": {
+            "PACKAGE_NAME": "com.livechat.dating"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.livechat.dating"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.livechat.dating"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.livechat.dating"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.livechat.dating"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.livechat.dating"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.livechat.dating"
+        },
+        "cordova-admob": {
+            "PACKAGE_NAME": "com.livechat.dating"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.livechat.dating"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.livechat.dating"
+        },
+        "cordova-plugin-googleplus": {
+            "PACKAGE_NAME": "com.livechat.dating"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.livechat.dating"
+        },
+        "cordova-connectivity-monitor": {
+            "PACKAGE_NAME": "com.livechat.dating"
+        }
+    }
+}

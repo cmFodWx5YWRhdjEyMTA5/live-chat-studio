@@ -1,0 +1,61 @@
+<div class="modal">
+	
+	<header class="bar bar-header bar-dark">
+        <h1 class="title">Registration</h1>        
+		<button class="button button-clear" ng-click="closeRegister()"><i class="icon ion-android-arrow-back"></i></button>
+    </header>
+    
+	<ion-content has-header="false" padding="false" style="top: 50px;">
+      <div class="list card">        
+        <label class="item item-input item-floating-label">
+          <input type="text" placeholder="Username" ng-model="register.username" ng-click="showKeyboard();">
+        </label>
+		
+        <label class="item item-input item-floating-label">
+          <input type="password" placeholder="Password" ng-model="register.password" ng-click="showKeyboard();">
+        </label>
+		
+		<label class="item item-input item-floating-label">
+          <input type="password" placeholder="Re-Password" ng-model="register.re_password" ng-click="showKeyboard();">
+        </label>
+			
+				
+		<label class="item item-input item-select">
+			<div class="input-label">Gender</div>
+			<select ng-model="register.gender" ng-options="gender.name for gender in genders">
+				<option value="">-Select gender-</option>
+			</select>			
+        </label>
+		
+		
+		
+		<label  class="item item-input item-select">
+			<div class="input-label">Age</div>
+			<select ng-model="register.age" ng-options="age.age for age in ages">
+				<option value="">-Select age-</option>
+			</select>
+        </label>
+		
+		
+		<label class="item item-input item-floating-label">
+          <input type="email" placeholder="Email" ng-model="register.email"  ng-click="showKeyboard();">
+        </label>
+		
+        <label class="item item-input item-floating-label">          
+		   <textarea placeholder="Description" ng-model="register.descr"  ng-click="showKeyboard();"></textarea>
+        </label>
+		
+		
+        <div class="padding">
+          <button class="button button-full button-assertive button-stable" ng-click="register_press()">Create Account</button>
+        </div>
+		
+      </div>
+	  
+	  
+	  
+    </ion-content>
+	
+	
+	
+</div>

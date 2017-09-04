@@ -1,0 +1,29 @@
+<ion-view title="Visitors" animation="no-animation" left-buttons="leftButtons">
+	
+	<ion-nav-buttons side="right">
+		<button ng-show="visitors.length > 0" class="button button-dark" ng-click="remove_visitors();"><i class="icon ion-trash-b"></i></button>
+	</ion-nav-buttons>
+	
+	
+	<ion-content has-header="true" padding="false" has-bouncing="true">
+		<div style="color: #444; text-align: center; font-size: 14px" ng-show="visitors.length <= 0"><i class="icon ion-information-circled"></i> Your profile has not been viewed yet.</strong></div>		
+			
+		<ion-list>
+
+			<ion-item collection-repeat="visitor in visitors" 
+			
+				<a class="item item-avatar" ng-click="viewProfile(visitor)">
+				  <img src="{{visitor.ThumbName}}">
+				  <h2>{{visitor.username}}</h2>
+				  <p>{{visitor.descr}}</p>
+				  <p>{{visitor.v_date}}</p>
+				  <span class="badge badge-balanced">{{visitor.age}}</span>
+				</a>
+			 
+			</ion-item>
+
+		</ion-list>
+		
+	</ion-content>
+	
+</ion-view>

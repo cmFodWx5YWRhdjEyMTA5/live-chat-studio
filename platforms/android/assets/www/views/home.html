@@ -1,0 +1,27 @@
+<ion-view title="People" animation="no-animation" left-buttons="leftButtons" right-buttons="rightButtons">
+			
+	<ion-nav-buttons side="right">				
+		<button class="button button-clear" ng-click="share()"><i class="icon ion-share stable"></i></button>				
+		<button class="button button-clear" ng-click="popover.show($event)"><i class="icon ion-more"></i></button>		
+	</ion-nav-buttons>
+	
+	<ion-content has-header="true" padding="false" has-bouncing="true">
+		
+		<p style="text-align: center; color: #444;">Pull to refresh...</p>
+		<ion-refresher
+				pulling-text="Pull to refresh..."
+				on-refresh="refresh_people()">
+		</ion-refresher>
+		
+		<div style="background: #444; border-left: 1px #3FABB9 solid; border-top: 1px #3FABB9 solid;" collection-repeat="user in users | limitTo: limit"
+		item-height="15%" item-width="20%">
+			<span class="badge badge-balanced header-status-badge">{{user.age}}</span>
+			<img ng-click="viewProfile(user)" ng-src="{{user.ThumbName}}" style="position: relative; padding: 2px; width: 100%; height: 100%; border-radius: 10%;">
+			<div style="position: absolute; width: 100%; bottom: 0px;  text-align: center; font-size: 12px; z-index: 20; color: #fff; text-shadow: 1px 1px 1px #000, 3px 3px 5px #444;">{{user.shortName}}</div>
+		</div> 
+		
+		
+					
+	</ion-content>
+	
+</ion-view>

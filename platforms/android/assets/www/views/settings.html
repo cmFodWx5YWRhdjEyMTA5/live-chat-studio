@@ -1,0 +1,99 @@
+<ion-view title="Settings" animation="no-animation" left-buttons="leftButtons">
+
+    <ion-nav-buttons side="right">
+      <button class="button" ng-click="done()">
+	  <i class="icon ion-checkmark"></i>
+	  </button>
+    </ion-nav-buttons>
+   
+   <ion-content has-header="true">
+        
+		
+		<ul class="list">	
+			
+			<li class="item item-checkbox">
+				<label class="checkbox">
+					<input type="checkbox" ng-model="setting.man" ng-checked="setting.man">
+				</label>				
+				<span class="item-note">
+					<i class="icon ion-man"></i> Male 
+				</span>
+			</li>
+			
+		    <li class="item item-checkbox">
+				<label class="checkbox">
+					<input type="checkbox" ng-model="setting.woman" ng-checked="setting.woman"> 
+				</label>
+				 
+				<span class="item-note">
+					<i class="icon ion-woman"></i> Female 
+				</span>
+			</li>
+			
+			<li class="item item-checkbox">
+				<label class="checkbox">
+					<input type="checkbox" ng-model="setting.photo" ng-checked="setting.photo">
+				</label>
+				
+				<span class="item-note">
+					<i class="icon ion-camera"></i> With photo
+				</span>
+				
+			</li>
+			
+			
+			<a class="item item-icon-left" ng-model="setting.age_from" ng-click="type_age_from();">
+				<i class="icon ion-ios-arrow-back"></i>
+				 <span class="button button-small button-assertive">{{setting.age_from}}</span>
+				<span class="item-note">
+					Age from
+				</span>
+			</a>
+			 
+			
+			<a class="item item-icon-left" ng-model="setting.age_to" ng-click="type_age_to();">					
+				<i class="icon ion-ios-arrow-forward"></i>
+					 <span class="button button-small button-balanced">{{setting.age_to}}</span>
+				<span class="item-note">
+					Age to
+				</span>
+			</a>
+			
+			
+			<a class="item item-icon-left" ng-model="setting.distance" ng-click="type_distance();">
+				<i class="icon ion-android-locate"></i>
+				<span class="button button-small button-assertive">{{setting.distance}}</span>
+				<span class="item-note">
+					Radius distance 
+				</span>
+			</a>
+			
+			<li class="item item-checkbox">
+				<label class="checkbox">
+					<input type="checkbox" ng-model="setting.location" ng-checked="setting.location">
+				</label>
+				
+				<span class="item-note">
+					<i class="icon ion-location"></i> Show my location
+				</span>
+
+			</li>
+			
+			
+			<li class="item item-checkbox">
+				<label class="checkbox">
+					<input type="checkbox" ng-model="setting.sound" ng-checked="setting.sound">
+				</label>
+				
+				<span class="item-note">
+					<i class="icon ion-sound"></i> In-app sounds
+				</span>
+
+			</li>
+						
+			 
+		</ul>	
+			
+			 
+    </ion-content>
+</ion-view>

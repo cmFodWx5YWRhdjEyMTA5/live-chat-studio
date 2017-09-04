@@ -1,0 +1,43 @@
+<ion-view title="{{user.username}}, {{user.age}}" animation="no-animation" left-buttons="leftButtons">
+	
+	<ion-nav-buttons side="right">
+			<button class="button button-dark" ng-click="popover.show($event)"><i class="icon ion-more"></i></button>	
+	</ion-nav-buttons>
+	
+   <ion-content has-header="false" padding="false" style="background: #444;">		
+		<div class="ify_photo" style="text-align: center;">			
+			<ion-slide-box show-pager="false">
+				<ion-slide ng-repeat="image in myImages">
+					<ion-scroll zooming="true" direction="xy" min-zoom="1">
+						<img class="full-image" imageonload ng-src="{{image.ImageName}}" />			
+					</ion-scroll>		
+					<div ng-show="canDelete" ng-click="removePhoto(image)" style="position: absolute; top: 5px; right: 4px;; display: block; background: rgba(87, 90, 79, 0.56); padding: 10px; text-align: center; color: #fff; "><i class="icon ion-trash-a"> Remove</i> </div>
+					<div ng-show="canDelete" ng-click="make_profile_photo(image)" style="position: absolute; top: 5px; left: 4px;; display: block; background: rgba(87, 90, 79, 0.56); padding: 10px; text-align: center; color: #fff; "><i class="icon ion-image"> Make profile photo</i> </div>
+				
+				</ion-slide>
+			</ion-slide-box>			
+		</div>					
+    </ion-content>
+	
+	<div class="tabs tabs-icon-top tabs-dark" style="background-color:rgba(5, 77, 108, 0.3) !important;">
+	
+		<a style="background: #444; " class="tab-item" ng-click="Existing_photo()">
+		  <i class="icon ion-images"></i>
+		  Existing
+		</a>
+		
+		<a style="background: #444; " class="tab-item" ng-click="user_take_photo()">
+		  <i class="icon ion-camera"></i>
+		  Take a Photo
+		</a>
+		
+		<a style="background: #444; " class="tab-item" ng-click="setState();">
+			<i class="icon ion-ios-circle-filled"></i>
+			My Status
+		</a>
+			
+	</div>
+	
+</ion-view>
+
+

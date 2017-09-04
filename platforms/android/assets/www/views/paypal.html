@@ -1,0 +1,27 @@
+﻿<div class="modal">
+    <header class="bar bar-header bar-dark">
+        <h1 class="title">Try for free!</h1>        
+		<button class="button button-clear" ng-click="closePaymentModal()"><i class="icon ion-android-arrow-back"></i></button>
+    </header>
+    <ion-content has-header="true" style="text-align: center; top: 50px;">		
+        
+		<h3>Super Powers - VIP</h3>
+		<p>Activate your account!</p>
+		<p style="color: red;" >You have reached a limit for sending message.</p>
+		<div class="list padding">
+			
+			<h3>Try for free!</h3>
+			<p>With Super Powers you can:</p>
+			
+			<p style="color: green;">1.Free forever <i class="icon ion-checkmark-circled energized"></i></p>
+			<p style="color: red;">2.Chat with VIP users <i class="icon ion-checkmark-circled energized"></i></p>
+			<p style="color: blue;" >3.Send unlimited messages <i class="icon ion-checkmark-circled energized"></i></p>
+			<p style="color: blue;">4.Reach more users <i class="icon ion-checkmark-circled energized"></i></p>
+			<p style="color: blue;">5.Get all promotional products on IFY <i class="icon ion-checkmark-circled energized"></i></p>
+
+			<p><a ng-click="pay_pal()" class="button button-full button-stable button-assertive"><i class="icon ion-checkmark-circled energized"></i> Buy - PayPal {{payment_value}}€</a></p>	
+			
+		</div>
+    </ion-content>
+</div>
+

@@ -1,0 +1,227 @@
+
+.tabs a {
+	font-size: 12px !important;	
+}
+
+.title.ng-leave{
+  display:none;
+}
+
+.title
+{
+  text-align: center !important;
+}
+
+.bar-header {
+    border: 0px !important;
+    border-bottom-color: transparent !important;
+    background-image: none;
+    border-bottom: none;
+
+}
+
+.init_pane {
+	background-image: url("ify_bg.jpg")  !important;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
+.slider{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.slider-pager {
+	top: 0;
+	bottom: initial;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll { height: 100%}
+
+.loading {
+    background-color:rgba(255, 255, 255, 0) !important;
+    color: #fff  !important;
+    font-size: 42px !important;
+}
+
+.item-avatar img
+{
+	max-width: 40px;
+    max-height: 40px;
+    width: 100%;
+    height: 100%;
+	border-radius: 50% !important;
+}
+
+.bar-footer.item-input-inset {
+  /* Reset position because item-input-inset makes it header */
+  position: absolute  !important;
+  
+}
+
+.hide-footer .my-footer.bar-footer {
+	display: flex  !important;
+}
+
+.bar {
+	position: absolute  !important;
+	display: flex  !important;
+
+}
+
+/*  chat my side */
+.message {
+ 
+  overflow: hidden;
+  padding: 5px 5px 0;
+  text-align: left;
+}
+
+.message img {
+	float: left;
+	max-width: 40px;
+    max-height: 40px;
+    width: 100%;
+    height: 100%;
+	border-radius: 50% !important;
+}
+
+
+.message span {
+	background: #666;
+	padding: 10px;
+	display: inline-block;
+	border-radius: 10px;
+	text-align: left;
+	color: #fff;
+	font-size:14px;
+	
+  }
+  
+	  	  
+/*  chat other side */
+.other {
+ 
+  overflow: hidden;
+  padding: 5px 5px 0;
+  text-align: left;
+}
+
+.other img {
+    float: right;
+	max-width: 40px;
+    max-height: 40px;
+    width: 100%;
+    height: 100%;
+	border-radius: 50% !important;
+}
+
+
+.other span {
+	background: #4a67ee;
+	padding: 10px;
+	display: inline-block;
+	border-radius: 10px;
+	text-align: left;
+	color: #fff;
+	font-size:14px;
+	
+
+  }
+  
+.other .message {
+	text-align: right;
+}
+
+
+/*  chat input */
+.message-input {
+    position: fixed;	
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: #fff;
+    border-top: 1px #ccc solid;
+	z-index: 20;
+	
+}
+
+.message-input input {
+  width: 75%;
+  padding: 10px 15px;
+  border-top: 0px #ddd solid;  
+  border-left: 0px #ddd solid;  
+  border-right: 0px #ddd solid;  
+  border-bottom: 1px #3FABB9 solid;      
+  background: #fff !important;	
+}
+
+
+/*  start image effects */
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/*  end image effects */
+
+.header-status-badge{
+  position: absolute;
+  top: 1px !important;
+  left: 1px !important;
+  padding: 2px 2px !important;
+  font-size: 10px !important; 
+  line-height: 12px  !important; 
+}
+
+.header-status-km-badge{
+  position: absolute;
+  top: 1px !important;
+  right: 1px !important;
+  padding: 2px 2px !important;
+  font-size: 9px !important; 
+  color: #fff !important; 
+  text-shadow: 1px 1px 1px #000, 3px 3px 5px #444 !important; 
+  background-color:rgba(255, 255, 255, 0) !important;
+  line-height: 12px  !important; 
+}
+
+
+.largeWidth{
+	font-weight: bold;
+	color: green !important; 
+}
