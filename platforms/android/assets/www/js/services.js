@@ -549,10 +549,13 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 				
 			}
 			
+			/*
 			if (mode)
 				admob.createBannerView();												
 			else
 				admob.requestInterstitialAd();	
+			*/
+			admob.requestInterstitialAd();
 			
 						
 		},
@@ -746,7 +749,7 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 
 			function me(response) {
 				// user has auth'd your app and is logged into Facebook
-				FB.api('/me', 'get', { access_token: response.authResponse.accessToken, fields: 'id,name,gender, email, birthday,about' }, function(res) {
+				FB.api('/me', 'get', { access_token: response.authResponse.accessToken, fields: 'id,name,gender, email, birthday, about' }, function(res) {
 					var user = _mainObject.make_user_profile_by_Social(res, 3);
 					d.resolve(user);
 					
@@ -778,7 +781,7 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 					alert("error");
 				}
 
-			},{ scope: 'public_profile' });
+			}, {scope: 'user_birthday, user_about_me, email', return_scopes: true});
 
 			return d.promise;
 
@@ -850,7 +853,6 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 				}
 				else 
 				{
-
 					var reg_email = (resp.email != null) ? resp.email : "info@kazanlachani.com";
 					
 					var _age = 18;
@@ -2545,7 +2547,7 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 			};
 
 			$scope.openChat = function (user) {
-					
+				
 				if (user.id === mainObject.profile.id) return false;
 				if ($scope.isChecked) return false;
 				
@@ -2553,8 +2555,7 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 				$rootScope.chatUser = user;
 				$rootScope.isVIP = user.isPayment > 0;
 				
-				
-				//check for counter and show AdMob advert				
+				//check for counter and show AdMob advert	
 				$rootScope.chatCounter++;						
 				if ($rootScope.chatCounter == $rootScope.maxChatCounter){					
 					mainObject.initAdsCounters();
@@ -2911,13 +2912,14 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 				}
 			}
 			
+			/*
 			$rootScope.refreshAdAfterSendSomeMessages++;
 			if ($rootScope.refreshAdAfterSendSomeMessages == 5)
 			{
 				$rootScope.refreshAdAfterSendSomeMessages = 0;
 				mainObject.InitAdMob();
-				
 			}
+			*/
 			
 			//insert into chat table - back-end service
 			if (new_message.code == 0) {

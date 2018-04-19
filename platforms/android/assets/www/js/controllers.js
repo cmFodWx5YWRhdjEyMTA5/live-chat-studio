@@ -538,13 +538,12 @@ livechat.controller('NearbyCtrl', function ($scope, $window, system, $timeout, $
 livechat.controller('ChatsCtrl', function ($scope, $rootScope, Chat, $ionicScrollDelegate, $timeout, $window, system) {
    
    $scope.data = {};
-   
    system.showUserModalForm($scope, true);
    
     if (!system.socket) {
 		system.socket = Chat.join(system.profile);
 		system.initScoket($ionicScrollDelegate);
-		system.showInterstitialAd();
+		//system.showInterstitialAd();
 	} else {
 		system.socket = Chat.join(system.profile);
 	}
@@ -1208,7 +1207,7 @@ livechat.controller('OnlineCtrl', function ($scope, $window, system, $ionicLoadi
 
 livechat.controller('AboutCtrl', function ($scope, $window, system, $timeout) {
 	
-	system.showInterstitialAd();		
+	//system.showInterstitialAd();		
 	
 	$scope.rate_app = function () {
 		window.open('market://details?id=com.livechat.dating', '_system');
