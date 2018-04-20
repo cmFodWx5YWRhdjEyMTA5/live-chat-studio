@@ -152,6 +152,7 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 			$rootScope.payPalCounter = 0;
 			$rootScope.maxPayPalCounter = 5;
 			
+			$rootScope.isBannerVisible = true;
 			$rootScope.appState = false;		
 			$rootScope.freeChatUsers = [];
 			$rootScope.refreshAdAfterSendSomeMessages = 0;
@@ -549,14 +550,10 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 				
 			}
 			
-			/*
 			if (mode)
 				admob.createBannerView();												
 			else
 				admob.requestInterstitialAd();	
-			*/
-			admob.requestInterstitialAd();
-			
 						
 		},
 		
@@ -2539,6 +2536,9 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 		
 			// chat
 			$scope.closeChatModal = function () {
+				mainObject.InitAdMob(true);
+				$rootScope.isBannerVisible = true;
+				
 				$rootScope.seen = false;
 				$rootScope.isChatView = false;
 				$scope.chat.hide();
@@ -2547,6 +2547,8 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 			};
 
 			$scope.openChat = function (user) {
+				admob.destroyBannerView();
+				$rootScope.isBannerVisible = false;
 				
 				if (user.id === mainObject.profile.id) return false;
 				if ($scope.isChecked) return false;

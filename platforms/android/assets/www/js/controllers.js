@@ -77,6 +77,13 @@ livechat.controller('MainCtrl', function ($scope, $rootScope, $q, $ionicLoading,
 
 		function onBackKeyDown() {
 
+			//banner fixes
+			if (!$rootScope.isBannerVisible){
+				$rootScope.isBannerVisible = true;
+				system.InitAdMob(true);
+				$('#homeMenu').trigger("click");
+			}
+			
 			$rootScope.seen = false;
 
 			if (typeof $rootScope.isChatView != "undefined") {
@@ -537,6 +544,8 @@ livechat.controller('NearbyCtrl', function ($scope, $window, system, $timeout, $
 
 livechat.controller('ChatsCtrl', function ($scope, $rootScope, Chat, $ionicScrollDelegate, $timeout, $window, system) {
    
+   admob.destroyBannerView();
+   
    $scope.data = {};
    system.showUserModalForm($scope, true);
    
@@ -573,6 +582,7 @@ livechat.controller('ChatsCtrl', function ($scope, $rootScope, Chat, $ionicScrol
 	}  
 	
 	$scope.closeChatModal = function () {
+		system.InitAdMob(true);
 		$('#homeMenu').trigger("click");
 	}
 	
