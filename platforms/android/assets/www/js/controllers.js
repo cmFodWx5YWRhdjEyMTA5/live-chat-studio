@@ -978,7 +978,6 @@ livechat.controller('SettingsCtrl', function ($scope, $window, system, $ionicHis
 
 		system.cashed_nearby = [];
 		system.cashed_people = [];
-		system.cashed_messages = [];
 		system.cashed_chat_messages = [];
 		system.cashed_favorites = [];
 		system.cashed_visitors = [];

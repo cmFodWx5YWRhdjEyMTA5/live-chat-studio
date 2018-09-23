@@ -116,7 +116,6 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 
 		cashed_nearby : [],
 		cashed_people : [],
-		cashed_messages : [],
 		cashed_chat_messages : [],
 		cashed_favorites : [],
 		cashed_visitors : [],
@@ -1152,8 +1151,7 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 		},
 
 		search : function (searchType) {
-
-			this.cashed_messages = [];
+			
 			this.cashed_chat_messages = [];
 			this.cashed_favorites = [];
 			this.cashed_visitors = [];
@@ -1321,12 +1319,7 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 		messages : function () {
 
 			var d = $q.defer();
-
-			if (this.cashed_messages.length > 0) {
-				d.resolve(this.cashed_messages);
-				return d.promise;
-			}
-
+			
 			var data = {
 				id : this.profile.id,
 				method : "userChats"
@@ -1344,7 +1337,6 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 				}
 
 				messages = mainObject.ImageCtrl(messages, false);
-				mainObject.cashed_messages = messages;
 				d.resolve(messages);
 
 			})
@@ -1364,7 +1356,7 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 			}
 
 			this.chatRequest(data, this, function (_data, mainObject) {
-				mainObject.cashed_messages = [];
+				//
 			});
 
 		},
@@ -1379,7 +1371,7 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 			}
 
 			this.chatRequest(data, this, function (_data, mainObject) {				
-				mainObject.cashed_messages = [];
+				//
 			});
 
 		},
@@ -2894,6 +2886,24 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 			Chat.seen(message);
 		},
 
+		addMyMessageInChat: function($scope,new_message) {
+			
+			var mainObject = this;
+			
+			for(var i in $scope.messages){
+				
+				var message = $scope.messages[i];
+				
+				if (message.user_id == new_message.send_to){
+					
+					message.message = "You: " + new_message.message;
+					message.ch_date = new_message.date,
+					$scope.messages.unshift($scope.messages.splice(i, 1)[0]);
+					break;
+				}	
+			}
+		},
+		
 		do_send_message : function ($scope, new_message, delegate) {
 
 			var mainObject = this;
@@ -2904,6 +2914,7 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 
 			Chat.sendMessage(new_message);
 			$scope.chatMessages.push(new_message);
+			mainObject.addMyMessageInChat($scope,new_message);
 			delegate.scrollBottom();
 			
 			//check for paypal payment
@@ -3393,10 +3404,7 @@ livechat.factory('system', function ($rootScope, Chat, $ionicPopup, $ionicAction
 		loadMessages : function ($scope, reLoad) {
 			var mainObject = this;
 			
-			mainObject.new_showLoading();
-
-			if (reLoad)
-				mainObject.cashed_messages = [];
+			mainObject.new_showLoading();	
 
 			$timeout(function () {
 
